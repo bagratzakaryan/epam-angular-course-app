@@ -1,4 +1,5 @@
-<div highlight>some text</div>
+<h1>Directive for <i>div</i> tags</h1>
+<h2>Click button</h2>
 
 <p>The hero's birthday is {{ birthday | date }}</p>
 
@@ -24,3 +25,73 @@
     Toggle condition to {{ condition ? "false" : "true" }}
   </button>
 </p>
+
+<h1>Directive for <i>div</i> tags</h1>
+<h2>Choose which of these colors you want for hovered state</h2>
+
+<label for="green">
+  <input type="radio" name="color" id="green" (click)="color = 'green'" />
+  Green
+</label>
+<label for="rebeccapurple">
+  <input
+    type="radio"
+    name="color"
+    id="rebeccapurple"
+    (click)="color = 'rebeccapurple'"
+  />
+  Rebeccapurple
+</label>
+<label for="chocolate">
+  <input
+    type="radio"
+    name="color"
+    id="chocolate"
+    (click)="color = 'chocolate'"
+  />
+  Chocolate
+</label>
+<label for="cadetblue">
+  <input
+    type="radio"
+    name="color"
+    id="cadetblue"
+    (click)="color = 'cadetblue'"
+  />
+  Cadetblue
+</label>
+
+<br />
+<br />
+
+<div [defaultColor]="'grey'" [appHovered]="color">
+  Hover me and I show which I color 1
+</div>
+<div [appHovered]="color">Hover me and I show which I color 2</div>
+<div [appHovered]="color">Hover me and I show which I color 3</div>
+<div [appHovered]="color">Hover me and I show which I color 4</div>
+
+<br />
+<hr />
+<br />
+
+<strong><i>Mouse over the following lines to see hover color</i></strong>
+
+<br />
+<br />
+
+<div [appHovered]="'green'">
+  Hover in <strong class="strong"><i>Green</i></strong>
+</div>
+<div [appHovered]="'rebeccapurple'">
+  Hover in <strong class="strong"><i>Rebeccapurple</i></strong>
+</div>
+<div [appHovered]="'chocolate'">
+  Hover in <strong class="strong"><i>Chocolate</i></strong>
+</div>
+<div [appHovered]="'cadetblue'">
+  Hover in <strong class="strong"><i>Cadetblue</i></strong>
+</div>
+<div appHovered="brown">
+  Hover in <strong class="strong"><i>Brown</i></strong>
+</div>

@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  color = 'grey';
   title = 'epam-angular-course-app';
   birthday = new Date(1988, 3, 15);
   condition = false;

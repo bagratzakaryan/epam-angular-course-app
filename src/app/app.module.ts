@@ -1,13 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { HoveredDirective } from './directives/hovered.directive';
-import { UnlessDirective } from './directives/unless.directive';
+import { AttributeDirective } from './directives/attribute.directive';
+import { StructuralDirective } from './directives/structural.directive';
+import { ExponentialStrengthPipe } from './pipes/exponential-strength.pipe';
 
 @NgModule({
-  declarations: [AppComponent, HoveredDirective, UnlessDirective],
-  imports: [BrowserModule],
+  declarations: [
+    AppComponent,
+    ExponentialStrengthPipe,
+    AttributeDirective,
+    StructuralDirective,
+  ],
+  imports: [BrowserModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

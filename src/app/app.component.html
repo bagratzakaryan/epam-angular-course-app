@@ -1,7 +1,34 @@
-<h1>Directive for <i>div</i> tags</h1>
-<h2>Click button</h2>
-
+<H1><i>Pipes</i></H1>
+<h2>Default Pipe</h2>
 <p>The hero's birthday is {{ birthday | date }}</p>
+<p>The hero's birthday is {{ birthday | date: "MM/dd/yy" }}</p>
+<p>The chained hero's birthday is {{ birthday | date | uppercase }}</p>
+<p>
+  The chained hero's birthday is {{ birthday | date: "fullDate" | uppercase }}
+</p>
+
+<h2>Custom Pipe</h2>
+<p>Super power boost: {{ 2 | exponentialStrength: 10 }}</p>
+
+<br />
+<br />
+
+<div>Count: {{ (source$ | async)?.length }}</div>
+<div *ngFor="let item of source$ | async">
+  <span>Customer: {{ item.Customer }} </span>
+  <span>Amount: {{ item.Amount }} </span>
+  <span>Product: {{ item.Product }} </span>
+  <span>SaleDate: {{ item.SaleDate | date: "MM/dd/yy" }} </span>
+</div>
+
+<br />
+<br />
+<br />
+
+<H1><i>Directives</i></H1>
+
+<h2>Structural Directive</h2>
+<h4>Click button</h4>
 
 <p *appUnless="condition" class="unless a">
   (A) This paragraph is displayed because the condition is false.
@@ -26,8 +53,11 @@
   </button>
 </p>
 
-<h1>Directive for <i>div</i> tags</h1>
-<h2>Choose which of these colors you want for hovered state</h2>
+<br />
+<br />
+
+<h2>Attribute Directive</h2>
+<h4>Choose which of these colors you want for hovered state</h4>
 
 <label for="green">
   <input type="radio" name="color" id="green" (click)="color = 'green'" />

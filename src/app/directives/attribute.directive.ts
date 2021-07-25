@@ -3,7 +3,7 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 @Directive({
   selector: '[appHovered]',
 })
-export class HoveredDirective {
+export class AttributeDirective {
   @Input() defaultColor = '';
   @Input() appHovered = '';
 

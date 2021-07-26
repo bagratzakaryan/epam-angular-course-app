@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ViewEncapsulation } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { CompilerConfig } from '@angular/compiler';
 
 import { AppComponent } from './app.component';
 import { AttributeDirective } from './directives/attribute.directive';
@@ -23,7 +24,16 @@ import { PipeUsageComponent } from './pipe-usage/pipe-usage.component';
     PipeUsageComponent,
   ],
   imports: [BrowserModule, HttpClientModule],
-  providers: [],
+  providers: [
+    {
+      provide: CompilerConfig,
+      useValue: new CompilerConfig({
+        defaultEncapsulation: ViewEncapsulation.ShadowDom,
+      }),
+    },
+    { provide: ViewEncapsulation, useValue: ViewEncapsulation.ShadowDom },
+  ],
   bootstrap: [AppComponent],
+  entryComponents: [Feature1Component, Feature2Component],
 })
 export class AppModule {}

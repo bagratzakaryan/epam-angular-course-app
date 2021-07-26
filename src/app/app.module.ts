@@ -34,6 +34,5 @@ import { PipeUsageComponent } from './pipe-usage/pipe-usage.component';
     { provide: ViewEncapsulation, useValue: ViewEncapsulation.ShadowDom },
   ],
   bootstrap: [AppComponent],
-  entryComponents: [Feature1Component, Feature2Component],
 })
 export class AppModule {}

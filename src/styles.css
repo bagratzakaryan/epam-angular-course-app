@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+p {
+  color: #333;
+  font-family: sans-serif;
+}
+
+h1 {
+  color: #3888a3;
+}
+
+h2 {
+  border-bottom: solid 1px #896ac8;
+  color: #896ac8;
+}

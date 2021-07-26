@@ -1,0 +1,25 @@
+<H1><i>Pipes</i></H1>
+
+<!-- Default Pipe -->
+<h2>Default Pipe</h2>
+<p>The hero's birthday is {{ birthday | date }}</p>
+<p>The hero's birthday is {{ birthday | date: "MM/dd/yy" }}</p>
+<p>The chained hero's birthday is {{ birthday | date | uppercase }}</p>
+<p>
+  The chained hero's birthday is {{ birthday | date: "fullDate" | uppercase }}
+</p>
+
+<!-- Custom Pipe -->
+<h2>Custom Pipe</h2>
+<p>Super power boost: {{ 2 | exponential: 10 }}</p>
+
+<br />
+<br />
+
+<div>Count: {{ (source$ | async)?.length }}</div>
+<div *ngFor="let item of source$ | async">
+  <span>Customer: {{ item.Customer }} </span>
+  <span>Amount: {{ item.Amount }} </span>
+  <span>Product: {{ item.Product }} </span>
+  <span>SaleDate: {{ item.SaleDate | date: "MM/dd/yy" }} </span>
+</div>

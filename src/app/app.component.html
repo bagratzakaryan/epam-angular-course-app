@@ -1,12 +1,32 @@
 <!-- Pipes in Angular -->
-<app-pipe-usage></app-pipe-usage>
+<!-- <app-pipe-usage></app-pipe-usage> -->
 
 <!-- Directives in Angular -->
 <!-- <app-directive-usage></app-directive-usage> -->
 
 <!-- CSS Encapsulation in Angular -->
-<!-- <main>
+<main>
   <h2>CSS Encapsulation in Angular</h2>
   <app-feature1></app-feature1>
   <app-feature2></app-feature2>
-</main> -->
+</main>
+
+<!-- <div *ngIf="condition">Ng if tag is visible</div>
+
+<ng-template [ngIf]="condition">
+  <div>Ng if tag is visible</div>
+</ng-template>  -->
+
+<!-- 
+<div [ngSwitch]="switch_expression">
+  <div *ngSwitchCase="'case_1'">switch case 1</div>
+  <div *ngSwitchCase="'case_2'">switch case 2</div>
+  <div *ngSwitchDefault>switch default</div>
+</div>
+
+<div *ngFor="let item of source">
+  <span>Customer: {{ item.Customer }} </span>
+  <span>Amount: {{ item.Amount }} </span>
+  <span>Product: {{ item.Product }} </span>
+  <span>SaleDate: {{ item.SaleDate | date: "MM/dd/yy" }} </span>
+</div> -->

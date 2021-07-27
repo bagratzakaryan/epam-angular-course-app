@@ -12,7 +12,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'exponential',
 })
 export class ExponentialPipe implements PipeTransform {
-  transform(value: number, exponent = 1): number {
-    return Math.pow(value, exponent);
+  transform(value: number, exponent = 1, multiply: number): number {
+    return multiply * Math.pow(value, exponent);
   }
 }

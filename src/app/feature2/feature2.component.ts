@@ -5,6 +5,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   templateUrl: './feature2.component.html',
   styleUrls: ['./feature2.component.css'],
   // encapsulation: ViewEncapsulation.None,
+  // encapsulation: ViewEncapsulation.Emulated
+  // encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class Feature2Component implements OnInit {
   constructor() {}

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectiveUsageComponent implements OnInit {
   condition = false;
-  color = 'grey';
+  color!: string;
 
   constructor() {}
 

@@ -1,37 +1,18 @@
-import { NgModule, ViewEncapsulation } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { CompilerConfig } from '@angular/compiler';
 
 import { AppComponent } from './app.component';
-import { AttributeDirective } from './directives/attribute.directive';
-import { StructuralDirective } from './directives/structural.directive';
-import { ExponentialPipe } from './pipes/exponential-strength.pipe';
-import { Feature1Component } from './feature1/feature1.component';
-import { Feature2Component } from './feature2/feature2.component';
-import { DirectiveUsageComponent } from './directive-usage/directive-usage.component';
-import { PipeUsageComponent } from './pipe-usage/pipe-usage.component';
+import { PipesDirectivesModule } from './pipes-directives/pipes-directives.module';
+import { DIServicesModule } from './di-services/di-services.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ExponentialPipe,
-    AttributeDirective,
-    StructuralDirective,
-    Feature1Component,
-    Feature2Component,
-    DirectiveUsageComponent,
-    PipeUsageComponent,
-  ],
-  imports: [BrowserModule, HttpClientModule],
-  providers: [
-    {
-      provide: CompilerConfig,
-      useValue: new CompilerConfig({
-        defaultEncapsulation: ViewEncapsulation.ShadowDom,
-      }),
-    },
-    { provide: ViewEncapsulation, useValue: ViewEncapsulation.ShadowDom },
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    PipesDirectivesModule,
+    DIServicesModule,
   ],
   bootstrap: [AppComponent],
 })

@@ -1,0 +1,118 @@
+<H1><i>Directives</i></H1>
+
+<!-- Attribute Directive  -->
+<h2>
+  <span style="color: red">Attribute Directive</span> are used to change the
+  appearance or behavior of DOM element.
+</h2>
+<h4>Choose which of these colors you want for hovered state</h4>
+
+<label for="green">
+  <input type="radio" name="color" id="green" (click)="color = 'green'" />
+  Green
+</label>
+<label for="rebeccapurple">
+  <input
+    type="radio"
+    name="color"
+    id="rebeccapurple"
+    (click)="color = 'rebeccapurple'"
+  />
+  Rebeccapurple
+</label>
+<label for="chocolate">
+  <input
+    type="radio"
+    name="color"
+    id="chocolate"
+    (click)="color = 'chocolate'"
+  />
+  Chocolate
+</label>
+<label for="cadetblue">
+  <input
+    type="radio"
+    name="color"
+    id="cadetblue"
+    (click)="color = 'cadetblue'"
+  />
+  Cadetblue
+</label>
+
+<br />
+<br />
+<div [defaultColor]="'grey'" [appHovered]="color">
+  Hover me and I show which I color 1
+</div>
+
+<div [appHovered]="color">Hover me and I show which I color 2</div>
+<div [appHovered]="color">Hover me and I show which I color 3</div>
+<div [appHovered]="color">Hover me and I show which I color 4</div>
+
+<br />
+<hr />
+<br />
+
+<strong><i>Mouse over the following lines to see hover color</i></strong>
+
+<br />
+<br />
+
+<div [appHovered]="'green'">
+  Hover in <strong class="strong"><i>Green</i></strong>
+</div>
+<div [appHovered]="'rebeccapurple'">
+  Hover in <strong class="strong"><i>Rebeccapurple</i></strong>
+</div>
+<div [appHovered]="'chocolate'">
+  Hover in <strong class="strong"><i>Chocolate</i></strong>
+</div>
+<div [appHovered]="'cadetblue'">
+  Hover in <strong class="strong"><i>Cadetblue</i></strong>
+</div>
+<div appHovered="brown">
+  Hover in <strong class="strong"><i>Brown</i></strong>
+</div>
+
+<!-- Structural Directive  -->
+<h2>
+  <span style="color: red">Structural directives</span> are used for shaping or
+  reshaping HTML DOM by adding, removing elements.
+</h2>
+<h4>Click button</h4>
+
+<p *appUnless="condition" class="unless a">
+  (A) This paragraph is displayed because the condition is false.
+</p>
+
+<p *appUnless="!condition" class="unless b">
+  (B) Although the condition is true, this paragraph is displayed because
+  appUnless is set to false.
+</p>
+
+<ng-template [appUnless]="!condition">
+  <p class="unless b">
+    (B) Although the condition is true, this paragraph is displayed because
+    appUnless is set to false.
+  </p>
+</ng-template>
+
+<!-- <p>Hip!</p>
+<ng-template>
+  <p>Hip!</p>
+</ng-template>
+<p>Hooray!</p> -->
+
+<p>
+  The condition is currently
+  <span [ngClass]="{ a: !condition, b: condition, unless: true }">{{
+    condition
+  }}</span
+  >.
+  <button
+    (click)="condition = !condition"
+    [ngClass]="{ a: condition, b: !condition }"
+  >
+    Toggle condition to {{ condition ? "false" : "true" }}
+  </button>
+</p>

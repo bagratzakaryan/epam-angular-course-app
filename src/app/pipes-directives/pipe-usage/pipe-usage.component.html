@@ -1,0 +1,35 @@
+<H1><i>Pipes</i></H1>
+<h2>
+  Use pipes to transform strings, currency amounts, dates, and other data for
+  display. Pipes are simple functions to use in template expressions to accept
+  an input value and return a transformed value. Pipes are useful because you
+  can use them throughout your application, while only declaring each pipe once.
+  For example, you would use a pipe to show a date as April 15, 1988 rather than
+  the raw string format.
+</h2>
+<br />
+
+<!-- Default Pipe -->
+<h2>Default Pipe</h2>
+
+<p>The hero's birthday is {{ birthday | date }}</p>
+<p>The hero's birthday is {{ birthday | date: "MM/dd/yy" }}</p>
+<p>The chained hero's birthday is {{ birthday | date | uppercase }}</p>
+<p>
+  The chained hero's birthday is {{ birthday | date: "fullDate" | uppercase }}
+</p>
+
+<!-- Custom Pipe -->
+<h2>Custom Pipe</h2>
+<p>Super power boost: {{ 2 | exponential: 10:4 }}</p>
+
+<br />
+<br />
+
+<div>Count: {{ (source$ | async)?.length }}</div>
+<div *ngFor="let item of source$ | async">
+  <span>Customer: {{ item.Customer }} </span>
+  <span>Amount: {{ item.Amount }} </span>
+  <span>Product: {{ item.Product }} </span>
+  <span>SaleDate: {{ item.SaleDate | date: "MM/dd/yy" }} </span>
+</div>

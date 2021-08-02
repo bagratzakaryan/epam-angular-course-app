@@ -13,7 +13,7 @@ import { ExponentialPipe } from './pipes/exponential-strength.pipe';
 import { PipesDirectivesComponent } from './pipes-directives.component';
 
 @NgModule({
-  imports: [CommonModule, HttpClientModule],
+  imports: [HttpClientModule, CommonModule],
   declarations: [
     ExponentialPipe,
     AttributeDirective,

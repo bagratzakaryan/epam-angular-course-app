@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { map, shareReplay } from 'rxjs/operators';
+import { HttpService } from '../http.service';
 
 interface DataSource {
   Customer: string;
@@ -19,8 +19,8 @@ export class PipesDirectivesComponent implements OnInit {
   condition = false;
   source: DataSource[] = [];
 
-  constructor(private http: HttpClient) {
-    this.http
+  constructor(private httpService: HttpService) {
+    this.httpService
       .get('https://js.devexpress.com/Demos/SalesViewer/odata/DaySaleDtoes', {
         params: { startDate: '2020-05-10', endDate: '2020-05-15' },
       })

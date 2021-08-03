@@ -1,13 +1,17 @@
 import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+import { SharedService } from 'src/app/shared.service';
 
 @Directive({
   selector: '[appHovered]',
+  providers: [SharedService],
 })
 export class AttributeDirective {
   @Input() defaultColor = '';
   @Input() appHovered = '';
 
-  constructor(private el: ElementRef) {}
+  constructor(
+    private el: ElementRef // private sharedService: SharedService
+  ) {}
 
   @HostListener('mouseenter') onMouseEnter() {
     this.hover(this.appHovered || this.defaultColor || 'red', 'white');

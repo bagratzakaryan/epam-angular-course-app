@@ -34,6 +34,6 @@ export class PipesDirectivesComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this);
+    // console.log(this);
   }
 }

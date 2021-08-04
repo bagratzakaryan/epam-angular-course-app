@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
-import { AppComponent } from './resolution-modifiers.component';
+import { ResolutionModifiersComponent } from './resolution-modifiers.component';
 import { SelfNoDataComponent } from './self-no-data/self-no-data.component';
 import { HostComponent } from './host/host.component';
 import { SelfComponent } from './self/self.component';
@@ -15,6 +15,17 @@ import { CommonModule } from '@angular/common';
 @NgModule({
   imports: [BrowserModule, CommonModule, FormsModule],
   declarations: [
+    ResolutionModifiersComponent,
+    OptionalComponent,
+    SelfComponent,
+    SelfNoDataComponent,
+    HostComponent,
+    SkipselfComponent,
+    HostParentComponent,
+    HostChildComponent,
+  ],
+  exports: [
+    ResolutionModifiersComponent,
     OptionalComponent,
     SelfComponent,
     SelfNoDataComponent,

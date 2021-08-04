@@ -2,13 +2,12 @@ import { Component } from '@angular/core';
 import { FlowerService } from './flower.service';
 import { AnimalService } from './animal.service';
 
-
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  selector: 'app-providers-view-providers',
+  templateUrl: './providers-view-providers.component.html',
+  styleUrls: ['./providers-view-providers.component.css'],
 })
-export class AppComponent  {
+export class ProvidersViewProvidersComponent {
   constructor(public flower: FlowerService, public animal: AnimalService) {}
 }
 
@@ -22,8 +21,8 @@ export class AppComponent  {
 // metadata should be as follows:
 
 // @Component({
-//   selector: 'app-root',
-//   templateUrl: './app.component.html',
-//   styleUrls: [ './app.component.css' ],
+//   selector: 'app-providers-view-providers',
+//   templateUrl: './providers-view-providers.component.html',
+//   styleUrls: ['./providers-view-providers.component.css'],
 //   viewProviders: [{ provide: AnimalService, useValue: { emoji: '🦔' } }]
 // })

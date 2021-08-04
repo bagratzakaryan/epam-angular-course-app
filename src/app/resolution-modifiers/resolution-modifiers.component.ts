@@ -3,11 +3,11 @@ import { LeafService } from './leaf.service';
 import { FlowerService } from './flower.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  selector: 'app-resolution-modifiers',
+  templateUrl: './resolution-modifiers.component.html',
+  styleUrls: ['./resolution-modifiers.component.css'],
 })
-export class AppComponent {
+export class ResolutionModifiersComponent {
   name = 'Angular';
   constructor(public flower: FlowerService, public leaf: LeafService) {}
 }

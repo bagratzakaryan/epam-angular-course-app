@@ -11,9 +11,22 @@ import { Feature2Component } from './feature2/feature2.component';
 import { PipeUsageComponent } from './pipe-usage/pipe-usage.component';
 import { ExponentialPipe } from './pipes/exponential-strength.pipe';
 import { PipesDirectivesComponent } from './pipes-directives.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const ROUTES: Routes = [
+  {
+    path: '',
+    component: PipesDirectivesComponent,
+  },
+];
 
 @NgModule({
-  imports: [HttpClientModule, CommonModule],
+  imports: [
+    HttpClientModule,
+    CommonModule,
+    HttpClientModule,
+    RouterModule.forChild(ROUTES),
+  ],
   declarations: [
     ExponentialPipe,
     AttributeDirective,

@@ -1,3 +1,14 @@
-div {
+::ng-deep ul.nav {
+  padding: 0;
+}
+::ng-deep .nav li {
+  display: inline-block;
+  padding: 5px 10px;
+}
+::ng-deep .nav a {
   cursor: pointer;
+  color: #a72525;
+}
+::ng-deep .nav a:hover {
+  color: #ff0000;
 }

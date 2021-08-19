@@ -1,4 +1,41 @@
-<app-pipes-directives></app-pipes-directives>
-<app-di-services></app-di-services>
-<app-resolution-modifiers></app-resolution-modifiers>
-<app-providers-view-providers></app-providers-view-providers>
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/resolver']" routerLinkActive="active"
+      >Resolver</a
+    >
+  </li>
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      [routerLink]="['/resolution-modifier']"
+      routerLinkActive="active"
+      >Resolution Modifier</a
+    >
+  </li>
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      [routerLink]="['/providers-view-providers']"
+      routerLinkActive="active"
+      >Providers & View Providers</a
+    >
+  </li>
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      [routerLink]="['/pipes-directives']"
+      routerLinkActive="active"
+      >Pipes Directives</a
+    >
+  </li>
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      [routerLink]="['/di-services']"
+      routerLinkActive="active"
+      >DI Services</a
+    >
+  </li>
+</ul>
+
+<router-outlet></router-outlet>

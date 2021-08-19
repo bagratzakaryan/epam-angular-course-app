@@ -1,15 +1,23 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { ProvidersViewProvidersComponent } from './providers-view-providers.component';
 import { ChildComponent } from './child/child.component';
 import { InspectorComponent } from './inspector/inspector.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const ROUTES: Routes = [
+  {
+    path: '',
+    component: ProvidersViewProvidersComponent,
+  },
+];
 
 @NgModule({
-  imports: [BrowserModule, CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterModule.forChild(ROUTES)],
+  // schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
     ProvidersViewProvidersComponent,
     ChildComponent,

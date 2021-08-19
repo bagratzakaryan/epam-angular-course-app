@@ -8,6 +8,5 @@ import { FlowerService } from './flower.service';
   styleUrls: ['./resolution-modifiers.component.css'],
 })
 export class ResolutionModifiersComponent {
-  name = 'Angular';
   constructor(public flower: FlowerService, public leaf: LeafService) {}
 }

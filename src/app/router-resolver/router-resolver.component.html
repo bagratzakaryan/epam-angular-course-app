@@ -1,0 +1,36 @@
+<h1 class="nav justify-content-center">
+  Testing Resolvers With the Github User's API
+</h1>
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      [routerLink]="['/resolver', { outlets: { with: ['hasresolver'] } }]"
+      routerLinkActive="active"
+      >With Resolver</a
+    >
+  </li>
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      [routerLink]="['/resolver', { outlets: { without: ['noresolver'] } }]"
+      routerLinkActive="active"
+      >Without Resolver</a
+    >
+  </li>
+  <li class="nav-item">
+    <a class="nav-link specialNav" (click)="navigateHome()">Clear Outlets</a>
+  </li>
+</ul>
+
+<div class="row">
+  <!-- <router-outlet></router-outlet> -->
+  <div class="col-6">
+    <h3>With Resolver</h3>
+    <router-outlet name="with"></router-outlet>
+  </div>
+  <div class="col-6">
+    <h3>Without Resolver</h3>
+    <router-outlet name="without"></router-outlet>
+  </div>
+</div>

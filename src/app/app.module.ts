@@ -62,6 +62,12 @@ const ROUTES: Routes = [
       ),
     // data: { preload: true, delay: true },
   },
+  {
+    path: 'favicon',
+    loadChildren: () =>
+      import('./favicon/favicon.module').then((m) => m.FaviconModule),
+    // data: { preload: true, delay: true },
+  },
 ];
 
 @NgModule({

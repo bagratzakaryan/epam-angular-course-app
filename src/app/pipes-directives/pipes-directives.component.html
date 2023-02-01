@@ -22,9 +22,11 @@
   <div *ngSwitchDefault>switch default</div>
 </div>
 
-<div *ngFor="let item of source">
-  <span>Customer: {{ item.Customer }} </span>
-  <span>Amount: {{ item.Amount }} </span>
-  <span>Product: {{ item.Product }} </span>
-  <span>SaleDate: {{ item.SaleDate | date: "MM/dd/yy" }} </span>
-</div>
+<ng-template ngFor let-item [ngForOf]="source">
+  <div>
+    <span>Customer: {{ item.Customer }} </span>
+    <span>Amount: {{ item.Amount }} </span>
+    <span>Product: {{ item.Product }} </span>
+    <span>SaleDate: {{ item.SaleDate | date: "MM/dd/yy" }} </span>
+  </div>
+</ng-template>

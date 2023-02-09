@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import { HttpService } from 'src/app/http.service';
+import { DataService } from 'src/app/services/data.service';
 
 interface DataSource {
   Customer: string;
@@ -21,8 +19,8 @@ export class PipeUsageComponent implements OnInit {
   birthday = new Date(1988, 3, 15);
   source$: Observable<DataSource[]>;
 
-  constructor(private httpService: HttpService) {
-    this.source$ = this.httpService
+  constructor(private dataService: DataService) {
+    this.source$ = this.dataService
       .get('https://js.devexpress.com/Demos/SalesViewer/odata/DaySaleDtoes', {
         params: { startDate: '2020-05-10', endDate: '2020-05-15' },
       })

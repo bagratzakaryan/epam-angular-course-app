@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../services/Data.service';
+import { DiDataService } from '../services/di-data.service';
 
 @Component({
   selector: 'app-di-feature1',
   templateUrl: './di-feature1.component.html',
   styleUrls: ['./di-feature1.component.css'],
-  providers: [DataService],
+  providers: [DiDataService],
 })
 export class DiFeature1Component implements OnInit {
-  constructor(private dataService: DataService) {
-    console.log(this.dataService.getSource$());
-    // debugger;
+  constructor(private diDataService: DiDataService) {
+    console.log(this.diDataService.getSource$());
   }
 
   ngOnInit(): void {}

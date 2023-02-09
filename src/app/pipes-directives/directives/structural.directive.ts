@@ -1,5 +1,5 @@
 import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
-import { SharedService } from 'src/app/shared.service';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Directive({
   selector: '[appUnless]',
@@ -10,9 +10,8 @@ export class StructuralDirective {
 
   constructor(
     private templateRef: TemplateRef<any>,
-    private viewContainer: ViewContainerRef
-  ) // private sharedService: SharedService
-  {}
+    private viewContainer: ViewContainerRef // private sharedService: SharedService
+  ) {}
 
   @Input() set appUnless(condition: boolean) {
     if (!condition && !this.hasView) {

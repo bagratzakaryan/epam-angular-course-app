@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { delay } from 'rxjs/operators';
+import { CustomDataService } from '../services/custom-data.service';
+import { HttpMethods } from '../enums/http-methods.enum';
 
 @Injectable()
-export class GithubUserService {
+export class GithubUserService extends CustomDataService {
   private url = 'https://api.github.com/users';
 
-  constructor(private http: HttpClient) {}
-
   getUsers(): Observable<any> {
-    return this.http.get(this.url).pipe(delay(2000));
+    return this.execute(HttpMethods.GET, this.url).pipe(delay(2000));
   }
 }

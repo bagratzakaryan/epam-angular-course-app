@@ -1,0 +1,14 @@
+<div [formGroup]="formGroup">
+  <app-form-control [control]="firstNameControl"></app-form-control>
+  <br />
+  <br />
+  <app-form-control-name formControlName="lastName"></app-form-control-name>
+  <br />
+  <br />
+  <input type="text" [formControl]="addressControl" />
+</div>
+<br />
+<br />
+<app-ng-model [(ngModel)]="external" #validations="ngModel"></app-ng-model>
+external: {{ external }}
+<!-- <p>{{ validations.control | json }}</p> -->

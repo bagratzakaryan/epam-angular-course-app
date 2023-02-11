@@ -7,7 +7,6 @@ import { DiFeature3Component } from './di-feature3/di-feature3.component';
 import { APP_CONFIG } from './configs/app.config';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
 
 const ROUTES: Routes = [
   {
@@ -17,7 +16,7 @@ const ROUTES: Routes = [
 ];
 
 @NgModule({
-  imports: [CommonModule, HttpClientModule, RouterModule.forChild(ROUTES)],
+  imports: [CommonModule, RouterModule.forChild(ROUTES)],
   declarations: [
     DIServicesComponent,
     DiFeature1Component,

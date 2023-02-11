@@ -7,7 +7,6 @@ import { WithResolverComponent } from './with-resolver/with-resolver.component';
 import { WithoutResolverComponent } from './without-resolver/without-resolver.component';
 import { UserResolver } from './user.resolver';
 import { GithubUserService } from './github-user.service';
-import { HttpClientModule } from '@angular/common/http';
 
 const ROUTES: Routes = [
   {
@@ -30,7 +29,7 @@ const ROUTES: Routes = [
 ];
 
 @NgModule({
-  imports: [CommonModule, HttpClientModule, RouterModule.forChild(ROUTES)],
+  imports: [CommonModule, RouterModule.forChild(ROUTES)],
   declarations: [
     ResolverComponent,
     WithResolverComponent,

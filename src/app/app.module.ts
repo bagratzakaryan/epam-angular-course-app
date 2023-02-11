@@ -68,6 +68,14 @@ const ROUTES: Routes = [
       import('./favicon/favicon.module').then((m) => m.FaviconModule),
     // data: { preload: true, delay: true },
   },
+  {
+    path: 'control-value-accessor',
+    loadChildren: () =>
+      import('./control-value-accessor/control-value-accessor.module').then(
+        (m) => m.ControlValueAccessorModule
+      ),
+    // data: { preload: true, delay: true },
+  },
 ];
 
 @NgModule({

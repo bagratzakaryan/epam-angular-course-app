@@ -1,4 +1,3 @@
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CompilerConfig } from '@angular/compiler';
@@ -21,12 +20,7 @@ const ROUTES: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    HttpClientModule,
-    CommonModule,
-    HttpClientModule,
-    RouterModule.forChild(ROUTES),
-  ],
+  imports: [CommonModule, RouterModule.forChild(ROUTES)],
   declarations: [
     ExponentialPipe,
     AttributeDirective,

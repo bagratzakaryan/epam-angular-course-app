@@ -1,16 +1,16 @@
 import { Directive, ElementRef, HostListener, Input } from '@angular/core';
-import { SharedService } from 'src/app/services/shared.service';
+import { StateService } from 'src/app/services/state.service';
 
 @Directive({
   selector: '[appHovered]',
-  providers: [SharedService],
+  providers: [StateService],
 })
 export class AttributeDirective {
   @Input() defaultColor = '';
   @Input() appHovered = '';
 
   constructor(
-    private el: ElementRef // private sharedService: SharedService
+    private el: ElementRef // private stateService: StateService
   ) {}
 
   @HostListener('mouseenter') onMouseEnter() {

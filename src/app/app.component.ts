@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { SharedService } from './services/shared.service';
+import { StateService } from './services/state.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,7 @@ import { SharedService } from './services/shared.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  constructor(private router: Router, private sharedService: SharedService) {}
+  constructor(private router: Router, private stateService: StateService) {}
 
   navigateHome(): void {
     this.router.navigateByUrl('/home');
